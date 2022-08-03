@@ -21,7 +21,7 @@ function collect() payable { //payable here tells the ETM that it permits to rec
     Bank.get();
 }
 
-function () payable { //fallback function is called whenever the hief contracts receive ether
+function () payable { //fallback function is called whenever the contracts receive ether
     if (Bank.balance >= msg.value) { //if bank contract balance is more than the value that it was sent to the fallback function calls get() function once again starting a cycle 
         Bank.get();
     }
